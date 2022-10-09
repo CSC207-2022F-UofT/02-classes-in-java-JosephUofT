@@ -79,7 +79,7 @@ public class Silly implements Comparable<Silly>{
      *       strings (e.g. this.name = [first string] + [second string]).
      *       Make sure you document this method!
      */
-     public Silly(String s1; String s2){
+     public Silly(String s1, String s2){
         String fin = s1 + s2;
         this.name = fin;
      }
