@@ -69,7 +69,7 @@ public class Silly implements Comparable<Silly>{
      * @param number a number for this Silly instance's name.
      */
     public Silly(int number) {
-        this.name = "Silly #" + ((String) number);
+        this.name = "Silly #" + ((str) number);
     }
 
     /**
