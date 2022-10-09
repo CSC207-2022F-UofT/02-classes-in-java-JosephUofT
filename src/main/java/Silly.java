@@ -69,7 +69,7 @@ public class Silly implements Comparable<Silly>{
      * @param number a number for this Silly instance's name.
      */
     public Silly(int number) {
-        this.name = "Silly #" + number;
+        this.name = "Silly #" + ((String) number);
     }
 
     /**
@@ -120,7 +120,7 @@ public class Silly implements Comparable<Silly>{
         y.countStatic();
         x.countStatic();
         x.countStatic();
-        int[] expected_values = {"single str name", "Silly #5", "firstsecond"};
+        int[] expected_values = {0, 1, 2, 3};
 
         System.out.println("The countStatic calls will return " + Arrays.toString(expected_values));
     }
@@ -205,6 +205,19 @@ public class Silly implements Comparable<Silly>{
          *                You can get the length of a string by using the
          *                .length() method.
          */
+        int this_length = this.name.length();
+        int other_length = other.name.length();
+        
+        if (this_length > other_length){
+            return this_length - other_length;
+        }
+        else if (this_length == other_length){
+            return 0;
+        }
+        else{
+            return this_length - other_length;
+        }
+        
     }
 
     /*
