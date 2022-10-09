@@ -79,6 +79,10 @@ public class Silly implements Comparable<Silly>{
      *       strings (e.g. this.name = [first string] + [second string]).
      *       Make sure you document this method!
      */
+     public Silly(String s1; String s2){
+        String fin = s1 + s2;
+        this.name = fin;
+     }
 
 
 
@@ -116,7 +120,7 @@ public class Silly implements Comparable<Silly>{
         y.countStatic();
         x.countStatic();
         x.countStatic();
-        int[] expected_values = {};
+        int[] expected_values = {"single str name", "Silly #5", "firstsecond"};
 
         System.out.println("The countStatic calls will return " + Arrays.toString(expected_values));
     }
@@ -134,6 +138,7 @@ public class Silly implements Comparable<Silly>{
     @Override
     public String toString(){
         // TODO (Task 3): Implement the body of this method!
+        return this.name;
     }
 
     /**
@@ -154,6 +159,12 @@ public class Silly implements Comparable<Silly>{
          *                You just need to return true if the names are equal.
          */
         if (!(o instanceof Silly)){
+            return false;
+        }
+        else if (o.name.equals(this.name)){
+            return true;
+        }
+        else{
             return false;
         }
 
